@@ -1,0 +1,22 @@
+<p>
+    <strong>課題期限：</strong>
+    <%= @task.deadline %>
+</p>
+<p>
+    <strong>教科名：</strong>
+    <%= @task.title %>
+</p>
+<p>
+    <strong>内容：</strong>
+    <%= @task.content %>
+</p>
+<p>
+    <strong>詳細：</strong>
+    <%= @task.details %>
+</p>
+<p>
+    <strong>完了？：</strong>
+    <%= @task.done %><br>
+</p>
+  <br>投稿者：<%= @task.user.username %><br><br>
+<%= link_to "戻る", tasks_path, class: 'btn btn-outline-primary' %>

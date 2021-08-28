@@ -1,0 +1,84 @@
+<br>
+<h2>本日の日付：<%= Date.today %></h2>
+<br>
+<div class="PC-left">
+  <h4>今日の持ち物</h4><br>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <tr>
+          <th style="width:60%;">持ち物</th>
+          <th>編集</th>
+        </tr>
+        <% @bringings.each do |bringing| %>
+        <% if Date.today == bringing.day %>
+        <tr>
+          <td><p class="tdata"><%= bringing.bringing %></p></td>
+          <td>
+            <%= link_to '編集',edit_bringing_path(bringing), class:"btn btn-outline-primary btn-sm" %>
+            <%= link_to '削除',bringing_path(bringing), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
+          </td>
+        </tr>
+        <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="PC-right">
+  <h4>今日までの課題</h4><br>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <tr>
+          <th style="width: 25%;">教科名</th>
+          <th style="width: 27%;">内容</th>
+          <th style="width: 30%;">詳細</th>
+          <th>編集</th>
+        </tr>
+        <% @tasks.each do |task| %>
+        <% if task.deadline.strftime("%Y-%m-%d %H:%M") >= Date.today.to_s+" 00:00" && task.deadline.strftime("%Y-%m-%d %H:%M") <= Date.today.to_s+" 23:59" %>
+        <tr>
+          <td><p class="tdata"><%= task.title %></p></td>
+          <td><p class="tdata"><%= task.content %></p></td>
+          <td><p class="tdata"><%= task.details %></p></td>
+          <td>
+            <%= link_to '編集',edit_task_path(task), class:"btn btn-outline-primary btn-sm" %>
+            <%= link_to '削除',task_path(task), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
+          </td>
+        </tr>
+        <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+<div style="display:inline-block; width:100%;">
+  <br>
+  <h4>明日の課題</h4><br>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <tr>
+          <th>教科名</th>
+          <th>内容</th>
+          <th>詳細</th>
+          <th>編集ボタン</th>
+          <% @tasks.each do |task| %>
+          <% date = Date.today+1 %>
+          <% if task.deadline.strftime("%Y-%m-%d %H:%M") >= date.to_s+" 00:00" && task.deadline.strftime("%Y-%m-%d %H:%M") <= date.to_s+" 23:59" %>
+          <tr>
+            <td><p class="tdata"><%= task.title %></p></td>
+            <td><p class="tdata"><%= task.content %></p></td>
+            <td><p class="tdata"><%= task.details %></p></td>
+            <td>
+              <%= link_to '編集',edit_task_path(task), class:"btn btn-outline-primary btn-sm" %>
+              <%= link_to '削除',task_path(task), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
+            </td>
+          </tr>
+          <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>

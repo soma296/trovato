@@ -1,0 +1,111 @@
+<br>
+<% if user_signed_in? %>
+    <%= link_to "ユーザー一覧", users_path, class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "マイページ", user_path(current_user), class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %><br>
+    <body>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>／</th>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <td>今日の持ち物</td>
+                </tr>
+                <tr>
+                    <td>
+                        <% @bringings.each do |bringing| %>
+                            <% if Date.today == bringing.day %>
+                                <ul>
+                                    <li><%= bringing.bringing %></li>
+                                </ul>
+                            <% end %>
+                        <% end %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <td>今日の課題</td>
+                </tr>
+                <tr>
+                    <td>
+                        <% @tasks.each do |task| %>
+                            <% if Date.today == task.deadline %>
+                                <ul>
+                                    <li><%= task.title %></li>
+                                </ul>
+                            <% end %>
+                        <% end %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+<% else %>
+    <%= link_to "ユーザー一覧", users_path, class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-dark' %>
+<% end %>

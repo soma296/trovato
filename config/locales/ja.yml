@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      task: 課題 
+      bringing: 持ち物
+    attributes:
+      task:
+        deadline: 課題期限
+        title: 教科名
+        content: 内容
+        details: 詳細 
+      bringing:
+        day: 日付
+        title: 教科名
+        bringing: 持ち物

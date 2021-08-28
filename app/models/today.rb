@@ -1,0 +1,2 @@
+class Today < ApplicationRecord
+end

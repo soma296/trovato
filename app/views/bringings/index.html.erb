@@ -1,0 +1,43 @@
+<h1 class="title center">持ち物一覧</h1>
+<br>
+<div class="right", style="margin-right: 30px;">
+  <%= sort_link(@q, :day, "日付順") %>
+  <br>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :title, "キーワード検索" %>
+    <%= f.search_field :title_cont %>
+    <%= f.button :type => "submit", style: 'border-style: none;' do %>
+      <i class='fa fa-search'></i>
+    <% end %>
+  <% end %>
+</div>
+<br><br>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <tr>
+      <th>投稿者</th>
+      <th>持ち物</th>
+      <th>教科名</th>
+      <th>日付</th>
+      <th>ボタン</th>
+    </tr>
+    <% @bringings.each do |bringing| %>
+      <% if Date.today <= bringing.day %>
+        <tr>
+          <td><p class="tdata"><%= bringing.user.username %></p></td>
+          <td><p class="tdata"><%= bringing.bringing %></p></td>
+          <td><p class="tdata"><%= bringing.title %></p></td>
+          <td><p class="tdata"><%= bringing.day.strftime("%Y-%m-%d") %></p></td>
+          <td>
+          <%= link_to '表示', "/bringings/#{bringing.id}", class:"btn btn-outline-primary btn-sm" %>
+            <% if bringing.user.id == current_user.id %>
+              <%= link_to "編集", edit_bringing_path(bringing), class:"btn btn-outline-primary btn-sm" %>
+              <%= link_to "削除", bringing_path(bringing), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+

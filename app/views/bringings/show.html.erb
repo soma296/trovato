@@ -1,0 +1,16 @@
+<p>
+    <strong>日付：</strong>
+    <%= @bringing.day %>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
+    <strong>毎週？：</strong>
+    <%= @bringing.week %>
+</p>
+<p>
+    <strong>教科名：</strong>
+    <%= @bringing.title %>
+</p>
+<p>
+    <strong>持ち物：</strong>
+    <%= @bringing.bringing %>
+</p>
+  <br>投稿者：<%= @bringing.user.username %><br><br>
+  <%= link_to "戻る", bringings_path, class: 'btn btn-outline-primary' %>

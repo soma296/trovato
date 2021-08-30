@@ -54,8 +54,16 @@ class BringingsController < ApplicationController
         end
     end
     def destroy
-    bringing = Bringing.find(params[:id])
-    bringing.destroy
-    redirect_to "/bringings", danger: "持ち物を削除しました。"
+        bringing = Bringing.find(params[:id])
+        bringing.destroy
+        redirect_to "/bringings", danger: "持ち物を削除しました。"
     end
+    def destroy_all
+        @bringings = Bringing.where(id: params[:bringings])
+        @bringings.destroy_all
+        respond_to do |format|
+        format.html { redirect_to bringings_url, notice: '持ち物を削除しました。' }
+        format.json { head :no_content }
+        end
+        end
 end

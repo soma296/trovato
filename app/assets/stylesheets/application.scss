@@ -208,14 +208,14 @@ footer{
 		}
 	}
 
-	.users {
-		background-color: rgb(112, 120, 223);
-		background-image: url(fallback-gradient.svg);
-		background-image: -webkit-gradient(linear, left top, right top, from(rgb(112, 120, 223)), to(#98c0ed));
-		background-image: -webkit-linear-gradient(left, rgb(112, 120, 223), #98c0ed);
-		background-image: -moz-linear-gradient(left, rgb(112, 120, 223), #98c0ed);
-		background-image: -o-linear-gradient(left, rgb(112, 120, 223), #98c0ed);
-		background-image: linear-gradient(to right, rgb(112, 120, 223), #98c0ed);
-		margin: 0px;
-		overflow: hidden;
-	  }
+.users {
+	background-color: rgb(112, 120, 223);
+	background-image: url(fallback-gradient.svg);
+	background-image: -webkit-gradient(linear, left top, right top, from(rgb(112, 120, 223)), to(#98c0ed));
+	background-image: -webkit-linear-gradient(left, rgb(112, 120, 223), #98c0ed);
+	background-image: -moz-linear-gradient(left, rgb(112, 120, 223), #98c0ed);
+	background-image: -o-linear-gradient(left, rgb(112, 120, 223), #98c0ed);
+	background-image: linear-gradient(to right, rgb(112, 120, 223), #98c0ed);
+	margin: 0px;
+	overflow: hidden;
+	}

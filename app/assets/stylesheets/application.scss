@@ -104,7 +104,7 @@ body:after {/*擬似要素をつくる*/
 	display:inline-block;
 	width: 60px;
 	height: 40px;
-	background-image: url(suzume.jpg);
+	background-image: url(99suzume.jpg);
 	background-repeat: no-repeat;
 	background-size: contain;
 }
@@ -252,7 +252,6 @@ footer{
 		  transform: rotate(-7deg);
 	  }
 	}
-	  
 
 	.bird {
 		position: absolute;
@@ -363,5 +362,3 @@ footer{
 		98%  { transform: rotate(110deg); }
 		100% { transform: rotate(30deg); }
 	  }
-	  
-

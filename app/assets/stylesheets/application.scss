@@ -219,3 +219,24 @@ footer{
 		margin: 0px;
 		overflow: hidden;
 	  }
+
+	  .today-image {
+		background-position: bottom right;
+	  height: 50px;
+	  background-image: url(tomato.jpg);
+		background-repeat: no-repeat;
+		background-size: contain ;
+		animation: yurayura 2s linear infinite;
+	}
+	
+	@keyframes yurayura {
+		0%{
+			transform: rotate(7deg);
+		}
+		 100%{
+		  transform: rotate(7deg);
+	  }
+	  50%{
+		  transform: rotate(-7deg);
+	  }
+	}

@@ -69,6 +69,18 @@ input[type="search"] {
     width: 15em;             /* 横幅 */
 }
 
+input[type="email"] {
+    border: 2px solid #0a0;  /* 枠線 */
+    border-radius: 0.4em;   /* 角丸 */
+    width: 15em;             /* 横幅 */
+}
+
+input[type="password"] {
+    border: 2px solid #0a0;  /* 枠線 */
+    border-radius: 0.4em;   /* 角丸 */
+    width: 15em;             /* 横幅 */
+}
+
 html,body {
 	height: 100%
 }
@@ -162,7 +174,7 @@ footer{
 }
 
 .btn {
-	box-shadow: 0 0 10px gray;
+	box-shadow: 3px 3px 3px gray, 0 -4px 5px -2px gray inset;
 } 
 
 #content {
@@ -219,3 +231,26 @@ footer{
 		margin: 0px;
 		overflow: hidden;
 	  }
+
+	  .today-image {
+		background-position: bottom right;
+	  height: 50px;
+	  background-image: url(tomato.jpg);
+		background-repeat: no-repeat;
+		background-size: contain ;
+		animation: yurayura 2s linear infinite;
+	}
+	
+	@keyframes yurayura {
+		0%{
+			transform: rotate(7deg);
+		}
+		 100%{
+		  transform: rotate(7deg);
+	  }
+	  50%{
+		  transform: rotate(-7deg);
+	  }
+	}
+	  
+

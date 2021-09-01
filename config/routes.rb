@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :tasks
   resources :bringings
   resources :users
+  delete :bringings, to: 'bringings#destroy_all'
 end

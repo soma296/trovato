@@ -200,26 +200,6 @@ footer{
 	text-align: right;
 }
 
-.fuwafuwa {
-	animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
-	background: url(https://tsukatte.com/wp-content/uploads/2019/07/eraser.png) repeat center center / 60px auto;
-	display: inline-block; transition: 1.5s ease-in-out; width: 70px;
-	height: 70px;
-	margin-top: 15px;
-}
-
-@keyframes fuwafuwa { 
-	0% {
-		transform:translate(0, 0) rotate(-7deg); 
-	}
-	50% {
-		transform:translate(0, -7px) rotate(0deg);
-	} 
-	100% {
-		transform:translate(0, 0) rotate(7deg); 
-		}
-	}
-
 .users {
 	background-color: rgb(112, 120, 223);
 	background-image: url(fallback-gradient.svg);

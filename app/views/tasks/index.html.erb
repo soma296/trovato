@@ -31,7 +31,7 @@
           <td><p class="tdata"><%= task.title %></p></td>
           <td><p class="tdata"><%= task.content %></p></td>
           <td><p class="tdata"><%= task.details %></p></td>
-          <td><p class="tdata"><%= task.deadline.strftime("%Y-%m-%d %H:%M") %></p></td>
+          <td><p class="tdata"><%= task.deadline.strftime("%m/%d %H:%M") %></p></td>
           <td>
             <%= link_to '表示', "/tasks/#{task.id}", class:"btn btn-outline-primary btn-sm" %>
             <% if task.user.id == current_user.id %>

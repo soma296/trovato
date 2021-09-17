@@ -29,7 +29,7 @@
           <td><p class="tdata"><%= bringing.user.username %></p></td>
           <td><p class="tdata"><%= bringing.bringing %></p></td>
           <td><p class="tdata"><%= bringing.title %></p></td>
-          <td><p class="tdata"><%= bringing.day.strftime("%Y-%m-%d") %></p></td>
+          <td><p class="tdata"><%= bringing.day.strftime("%m/%d") %></p></td>
           <td>
           <%= link_to '表示', "/bringings/#{bringing.id}", class:"btn btn-outline-primary btn-sm" %>
             <% if bringing.user.id == current_user.id %>

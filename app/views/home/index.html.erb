@@ -18,7 +18,15 @@
 
                 <tr>
                     <th class="strong">1</td>
-                    <td> </td>
+                    <td><%= link_to "登録", new_subject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                        <% @subjects.each do |subject| %>
+                            <strong><%= subject.title %></strong><br>
+                            <%= subject.teacher %><br>
+                            <% if subject.user.id == current_user.id %>
+                                <%= link_to "編集", edit_subject_path(subject), class:"btn btn-outline-primary btn-sm" %>
+                                <%= link_to "削除",  subject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
+                            <% end %>
+                        <% end %></td>
                     <td> </td>
                     <td> </td>
                     <td> </td>

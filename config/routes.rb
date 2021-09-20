@@ -5,6 +5,35 @@ Rails.application.routes.draw do
   resources :bringings
   resources :users
   resources :subjects
+  resources :sub1jects
+  resources :sub2jects
+  resources :sub3jects
+  resources :sub4jects
+  resources :sub5jects
+  resources :sub6jects
+  resources :sub7jects
+  resources :sub8jects
+  resources :sub9jects
+  resources :sub10jects
+  resources :sub11jects
+  resources :sub12jects
+  resources :sub13jects
+  resources :sub14jects
+  resources :sub15jects
+  resources :sub16jects
+  resources :sub17jects
+  resources :sub18jects
+  resources :sub19jects
+  resources :sub20jects
+  resources :sub21jects
+  resources :sub22jects
+  resources :sub23jects
+  resources :sub24jects
+  resources :sub25jects
+  resources :sub26jects
+  resources :sub27jects
+  resources :sub28jects
+  resources :sub29jects
   resources :today
   delete :bringings, to: 'bringings#destroy_all'
 end

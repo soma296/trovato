@@ -27,9 +27,25 @@
   <div class="sub-image"></div>
   <div class="talker">
   
-    <p>遠征先の大阪に筆箱忘れる奴www</p>
+    <p>ここは削除予定</p>
   </div>
-  <script>
-alert('ﾌｫ━━━━(ﾟÅﾟ)(Åﾟ )(ﾟ　 )(　　)(　 ﾟ)( ﾟÅ)(ﾟÅﾟ)━━━━!! ');
+  
+  <script type="text/javascript">
+<!--
+function ranAry() {
+    var fruits =  ["タチツテトパワー", "僕が持ってるものなら", "他人は他人、自分は自分", "パンとワインで生きていける", "帰ろう"];
+    document.getElementById("dat").value = fruits[Math.floor(Math.random() * fruits.length)];
+}
+//-->
 </script>
+
+<div style="background-color : #CCC; padding : 20px 20px 1px;">
+［今のあなたを元気付ける台詞］を表示します
+    <form>
+        <div style="display:inline-flex;">
+          　<input type="button" value="表示" onClick="ranAry()">　
+            <input type="text" id="dat" placeholder="ランダムに元気づけます">
+        </div>
+    </form>
+</div>
 <% end %>

@@ -161,6 +161,33 @@ footer{
 	padding: 0;
 }
 
+.talker-top {
+	position: relative;
+	display: inline-block;
+	margin: 1.5em 0;
+	padding: 7px 10px;
+	min-width: 120px;
+	max-width: 100%;
+	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+  }
+  
+  .talker-top:before {
+	content: "";
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	margin-left: -15px;
+	border: 15px solid transparent;
+	border-bottom: 15px solid #e0edff;
+  }
+  
+  .talker-top p {
+	margin: 0;
+	padding: 0;
+  }
+
 @media screen and (min-width:481px) {
 	.PC-left {
 		width:35%; 

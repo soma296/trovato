@@ -161,6 +161,33 @@ footer{
 	padding: 0;
 }
 
+.talker-top {
+	position: relative;
+	display: inline-block;
+	margin: 1.5em 0;
+	padding: 7px 10px;
+	min-width: 120px;
+	max-width: 100%;
+	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+  }
+  
+  .talker-top:before {
+	content: "";
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	margin-left: -15px;
+	border: 15px solid transparent;
+	border-bottom: 15px solid #e0edff;
+  }
+  
+  .talker-top p {
+	margin: 0;
+	padding: 0;
+  }
+
 @media screen and (min-width:481px) {
 	.PC-left {
 		width:35%; 
@@ -352,3 +379,127 @@ animation-delay: 3s;
 th.strong {
 	background-color: #bdc3fc;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+	  .title {
+		display: flex;
+		overflow: hidden;
+		color: #aa8f7b;
+		font-family: cursive;
+		font-size: 52px;
+		animation-iteration-count: infinite;
+	  }
+	  
+	  .title span {
+		display: block;
+		transform: translate(0, 100%);
+		transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+	  }
+	  
+	  .title.-visible span {
+		transform: translate(0, 0);
+	  }
+	  
+	  .title span:nth-child(2) {
+		transition-delay: 0.06s;
+	  }
+	  .title span:nth-child(3) {
+		transition-delay: 0.12s;
+	  }
+	  .title span:nth-child(4) {
+		transition-delay: 0.18s;
+	  }
+	  .title span:nth-child(5) {
+		transition-delay: 0.24s;
+	  }
+	  .title span:nth-child(6) {
+		transition-delay: 0.30s;
+	  }
+	  .title span:nth-child(7) {
+		transition-delay: 0.36s;
+	  }
+
+	  .hiduke{
+		  color: #deb887;
+	  }
+
+	  .today {
+		position: relative;
+		display: inline-block;
+		height: 64px;
+		margin-left: 30px;
+		padding: 1rem 2rem 1rem 3rem;
+		color: #fff;
+		background: #fa4141;
+	  }
+
+	  .today::before{
+		position: absolute;
+		top: 0;
+		left: -30px;
+		content: '';
+		border-width: 32px 30px 32px 0;
+		border-style: solid;
+		border-color: transparent #fa4141 transparent transparent;
+	  }
+
+	  .today::after {
+		position: absolute;
+		top: calc(50% - 7px);
+		left: -10px;
+		width: 14px;
+		height: 14px;
+		content: '';
+		border-radius: 50%;
+		background: #fff;
+	  }
+
+	  .Sub{
+		  color: #4169e1;
+	  }
+
+	  $bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
+$bg-width: 50px;
+$bg-height: 50px;
+
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+
+@-webkit-keyframes bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+
+body {
+	/* img size is 50x50 */
+	background: url($bg-url) repeat 0 0;
+	
+	-webkit-animation: bg-scrolling-reverse .0s infinite; /* Safari 4+ */
+	-moz-animation:    bg-scrolling-reverse .0s infinite; /* Fx 5+ */
+	-o-animation:      bg-scrolling-reverse .0s infinite; /* Opera 12+ */
+	animation:         bg-scrolling-reverse .0s infinite; /* IE 10+ */
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function:    linear;
+	-o-animation-timing-function:      linear;
+	animation-timing-function:         linear;
+  }

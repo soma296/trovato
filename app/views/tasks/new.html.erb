@@ -8,7 +8,7 @@
     </ul>
   </div>
 <% end %>
-
+<br>
 <%= form_for @task, url: {action: :create} do |f| %>
   <p><%= f.label :deadline, ' 　課題期限' %>
   <%= f.datetime_field :deadline %></p>
@@ -24,16 +24,16 @@
   <br>
   <br>
   <br>
-  <div class="sub-image"></div>
-  <div class="talker">
+  &nbsp;&nbsp;<div class="sub-image"></div>
   
-    <p>ここは削除予定</p>
-  </div>
+  <svg height="35" width="90">
+  <polygon id="btn-triangle" points="-130,50 0,-0 100,100" style="fill:#CCC;cursor:pointer" />
+</svg>
   
   <script type="text/javascript">
 <!--
 function ranAry() {
-    var fruits =  ["タチツテトパワー", "僕が持ってるものなら", "他人は他人、自分は自分", "パンとワインで生きていける", "帰ろう"];
+    var fruits =  ["自分を信じるチャンスを与えろ", "みんなに笑われて強くなる", "夢はいつでも僕らの前にある", "パンとワインで生きていける", "雨風に打たれても生まれ変われる"];
     document.getElementById("dat").value = fruits[Math.floor(Math.random() * fruits.length)];
 }
 //-->
@@ -48,4 +48,5 @@ function ranAry() {
         </div>
     </form>
 </div>
+
 <% end %>

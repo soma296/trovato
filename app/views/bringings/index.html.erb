@@ -1,4 +1,5 @@
-<h1 class="title center">持ち物一覧</h1>
+<br>
+<h1 class="titlee center">持ち物一覧</h1>
 <br>
 <div class="right", style="margin-right: 30px;">
   <%= sort_link(@q, :day, "日付順") %>
@@ -29,7 +30,7 @@
           <td><p class="tdata"><%= bringing.user.username %></p></td>
           <td><p class="tdata"><%= bringing.bringing %></p></td>
           <td><p class="tdata"><%= bringing.title %></p></td>
-          <td><p class="tdata"><%= bringing.day.strftime("%Y-%m-%d") %></p></td>
+          <td><p class="tdata"><%= bringing.day.strftime("%m/%d") %></p></td>
           <td>
           <%= link_to '表示', "/bringings/#{bringing.id}", class:"btn btn-outline-primary btn-sm" %>
             <% if bringing.user.id == current_user.id %>
@@ -42,9 +43,12 @@
       <% end %>
     <% end %>
     <div class="actions">
-      <%= submit_tag "一括削除" %>
+    <div class="place", style="margin: 30px;"> 
+      <%= submit_tag "一括削除", class: "del" %>
+    </div>
     </div>
     <% end %>
   </table>
 </div>
+
 

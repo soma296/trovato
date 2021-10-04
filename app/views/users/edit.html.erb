@@ -1,25 +1,28 @@
-<body class="users"> 
-  <h3>ユーザー編集</h3><br>
+<div class="text-center">
+  <br>
+  <body class="users"> 
+    <h3>ユーザー編集</h3><br>
 
-  <% if @user.errors.present? %>
-    <h3>エラーがあります。</h3>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+    <% if @user.errors.present? %>
+      <h3>エラーがあります。</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
-  <%= form_for @user do |f| %>
-      <p>&emsp;<%= f.label :username, 'ユーザー名　　' %>
-      <%= f.text_field :username %></p>
+    <%= form_for @user do |f| %>
+        <p>&emsp;<%= f.label :username, 'ユーザー名　　' %>
+        <%= f.text_field :username %></p>
 
-      <p>&emsp;<%= f.label :email, 'メールアドレス' %>
-      <%= f.email_field :email %></p><br>
+        <p>&emsp;<%= f.label :email, 'メールアドレス' %>
+        <%= f.email_field :email %></p><br>
 
-      &emsp;<%= f.submit "更新", class: "btn btn-success" %>
-  <% end %>
-</body>
+        &emsp;<%= f.submit "更新", class: "btn btn-success" %>
+    <% end %>
+  </body>
+</div>
 
 <script>
   var mouseX = 0,

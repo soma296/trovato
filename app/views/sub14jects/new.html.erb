@@ -1,0 +1,8 @@
+<br>
+<%= form_for @sub14ject, url: {action: :create} do |f| %>
+  <p><%= f.label :title14, '教科名' %>
+  <%= f.text_field :title14 %></p>
+  <p><%= f.label :teacher14, '教師名' %>
+  <%= f.text_field :teacher14 %></p>
+  <%= f.submit '登録', class: "btn btn-success" %>
+<% end %>

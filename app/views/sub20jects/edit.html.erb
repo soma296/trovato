@@ -1,0 +1,8 @@
+<br>
+<%= form_for @sub20ject, url: {action: :update} do |f| %>
+  <p><%= f.label :title20, '教科名' %>
+  <%= f.text_field :title20 %></p>
+  <p><%= f.label :teacher20, '教師名' %>
+  <%= f.text_field :teacher20 %></p>
+  <%= f.submit '更新', class: "btn btn-success" %>
+<% end %>

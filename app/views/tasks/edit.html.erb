@@ -1,31 +1,35 @@
-<% if @task.errors.present? %>
-  <h3>エラーがあります。</h3>
-  <div class="field_with_errors">
-    <ul>
-      <% @task.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_for @task, url: {action: :update} do |f| %>
-  <p><%= f.label :deadline, ' 　課題期限' %>
-  <%= f.datetime_field :deadline %></p>
-  <p><%= f.label :title, ' 　教科名　' %>
-  <%= f.text_field :title %></p>
-  <p><%= f.label :content, ' 　内容　　 ' %>
-  <%= f.text_field :content %></p>
-  <p><%= f.label :details, ' 　詳細　' %>
-　<%= f.text_field :details %></p>
-　<div class="fuga"><%= f.label :done, '完了？　' %>
-  <%= f.select :done, [['未完了','未完了'],['完了','完了']], { include_blank: false, selected: '未完了' } %></div><br><br>
-  &emsp;<%= f.submit '更新', class: "btn btn-success" %>
+<div class="text-center">
+  <br><br><br><br>
+  <% if @task.errors.present? %>
+    <h3>エラーがあります。</h3>
+    <div class="field_with_errors">
+      <ul>
+        <% @task.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <br>
-  <br>
-  <br>
-  <div class="sub-image"></div>
-  <div class="talker">
-    <p>コンビニでのカップ麺は何を買うべきだろうか</p>
-  </div>
-<% end %>
+  <%= form_for @task, url: {action: :update} do |f| %>
+    <p><%= f.label :deadline, ' 課題期限　' %>
+    <%= f.datetime_field :deadline %></p>
+    <p><%= f.label :title, ' 　教科名　' %>
+    <%= f.text_field :title %></p>
+    <p><%= f.label :content, ' 　内容　　 ' %>
+    <%= f.text_field :content %></p>
+    <p><%= f.label :details, ' 　詳細　' %>
+  　<%= f.text_field :details %></p>
+  　<div class="fuga"><%= f.label :done, '完了？　' %>
+    <%= f.select :done, [['未完了','未完了'],['完了','完了']], { include_blank: false, selected: '未完了' } %></div><br><br>
+    <br>
+    &emsp;<%= f.submit '更新', class: "btn btn-success" %>
+    <br>
+    <br>
+    <br>
+    <div class="sub-image"></div>
+    <div class="talker">
+      <p>コンビニでのカップ麺は何を買うべきだろうか</p>
+    </div>
+  <% end %>
+</div>

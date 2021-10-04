@@ -54,8 +54,8 @@ class BringingsController < ApplicationController
         end
     end
     def destroy
-        bringing = Bringing.find(params[:id])
-        bringing.destroy
+        @bringing = Bringing.find(params[:id])
+        @bringing.destroy
         redirect_to "/bringings", danger: "持ち物を削除しました。"
     end
     def destroy_all

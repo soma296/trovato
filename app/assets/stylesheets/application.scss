@@ -161,6 +161,33 @@ footer{
 	padding: 0;
 }
 
+.talker-top {
+	position: relative;
+	display: inline-block;
+	margin: 1.5em 0;
+	padding: 7px 10px;
+	min-width: 120px;
+	max-width: 100%;
+	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+  }
+  
+  .talker-top:before {
+	content: "";
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	margin-left: -15px;
+	border: 15px solid transparent;
+	border-bottom: 15px solid #e0edff;
+  }
+  
+  .talker-top p {
+	margin: 0;
+	padding: 0;
+  }
+
 @media screen and (min-width:481px) {
 	.PC-left {
 		width:35%; 
@@ -175,7 +202,26 @@ footer{
 
 .btn {
 	box-shadow: 3px 3px 3px gray, 0 -4px 5px -2px gray inset;
-} 
+}
+
+.del{
+	display: inline-block;
+    border: 2px solid rgb(170, 0, 0);  /* 枠線 */
+	box-shadow: 3px 3px 3px gray;  /* 影 */
+    border-radius: 0.4em;   /* 角丸 */
+    padding: 12px 12px;             /* 横幅 */
+	font-size: 18pt;        /* 文字サイズ */
+	text-align: center;      /* 文字位置 */
+	cursor: pointer;     /* カーソル */
+	background: #ff0000;
+	color: #ffffff;
+}
+
+.del:hover{
+	box-shadow: none;        /* カーソル時の影消去 */
+	color: #ff0000;        /* 背景色 */
+	background: #ffffff;   /* 文字色 */
+}
 
 #content {
     width: 100%;
@@ -192,7 +238,7 @@ footer{
 	text-align: center;
 }
 
-.title {
+.titlee {
 	color: rgb(48, 48, 163);
 }
 
@@ -352,3 +398,127 @@ animation-delay: 3s;
 th.strong {
 	background-color: #bdc3fc;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+	  .title {
+		display: flex;
+		overflow: hidden;
+		color: #aa8f7b;
+		font-family: cursive;
+		font-size: 52px;
+		animation-iteration-count: infinite;
+	  }
+	  
+	  .title span {
+		display: block;
+		transform: translate(0, 100%);
+		transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+	  }
+	  
+	  .title.-visible span {
+		transform: translate(0, 0);
+	  }
+	  
+	  .title span:nth-child(2) {
+		transition-delay: 0.06s;
+	  }
+	  .title span:nth-child(3) {
+		transition-delay: 0.12s;
+	  }
+	  .title span:nth-child(4) {
+		transition-delay: 0.18s;
+	  }
+	  .title span:nth-child(5) {
+		transition-delay: 0.24s;
+	  }
+	  .title span:nth-child(6) {
+		transition-delay: 0.30s;
+	  }
+	  .title span:nth-child(7) {
+		transition-delay: 0.36s;
+	  }
+
+	  .hiduke{
+		  color: #deb887;
+	  }
+
+	  .today {
+		position: relative;
+		display: inline-block;
+		height: 64px;
+		margin-left: 30px;
+		padding: 1rem 2rem 1rem 3rem;
+		color: #fff;
+		background: #fa4141;
+	  }
+
+	  .today::before{
+		position: absolute;
+		top: 0;
+		left: -30px;
+		content: '';
+		border-width: 32px 30px 32px 0;
+		border-style: solid;
+		border-color: transparent #fa4141 transparent transparent;
+	  }
+
+	  .today::after {
+		position: absolute;
+		top: calc(50% - 7px);
+		left: -10px;
+		width: 14px;
+		height: 14px;
+		content: '';
+		border-radius: 50%;
+		background: #fff;
+	  }
+
+	  .Sub{
+		  color: #4169e1;
+	  }
+
+	  $bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
+$bg-width: 50px;
+$bg-height: 50px;
+
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+
+@-webkit-keyframes bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+
+body {
+	/* img size is 50x50 */
+	background: url($bg-url) repeat 0 0;
+	
+	-webkit-animation: bg-scrolling-reverse .0s infinite; /* Safari 4+ */
+	-moz-animation:    bg-scrolling-reverse .0s infinite; /* Fx 5+ */
+	-o-animation:      bg-scrolling-reverse .0s infinite; /* Opera 12+ */
+	animation:         bg-scrolling-reverse .0s infinite; /* IE 10+ */
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function:    linear;
+	-o-animation-timing-function:      linear;
+	animation-timing-function:         linear;
+  }

@@ -14,7 +14,7 @@
 </div>
 <br><br>
 <form method="get" do>
-<%= submit_tag '表示1', value: 'ボタン表示1' , name: 'button1', :class => 'btn btn-primary' %>
+<%= submit_tag '表示2', value: 'ボタン表示2' , name: 'button2', :class => 'btn btn-primary' %>
 </form>
 <h4 class="center" style="color: rgb(245, 72, 72);">未完了リスト</h4>
 <div class="table-responsive">
@@ -28,24 +28,22 @@
       <th>ボタン</th>
     </tr>
     <% @tasks.each do |task| %>
-      <% if task.user.id == current_user.id %>
-          <% if task.done == "未完了" %>
-            <tr>
-              <td><p class="tdata"><%= task.user.username %></p></td>
-              <td><p class="tdata"><%= task.title %></p></td>
-              <td><p class="tdata"><%= task.content %></p></td>
-              <td><p class="tdata"><%= task.details %></p></td>
-              <td><p class="tdata"><%= task.deadline.strftime("%Y-%m-%d %H:%M") %></p></td>
-              <td>
-                <%= link_to '表示', "/tasks/#{task.id}", class:"btn btn-outline-primary btn-sm" %>
-                <% if task.user.id == current_user.id %>
-                  <%= link_to "編集", edit_task_path(task), class:"btn btn-outline-primary btn-sm" %>
-                  <%= link_to "削除", task_path(task), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-      <% end %>
+        <% if task.done == "未完了" %>
+          <tr>
+            <td><p class="tdata"><%= task.user.username %></p></td>
+            <td><p class="tdata"><%= task.title %></p></td>
+            <td><p class="tdata"><%= task.content %></p></td>
+            <td><p class="tdata"><%= task.details %></p></td>
+            <td><p class="tdata"><%= task.deadline.strftime("%Y-%m-%d %H:%M") %></p></td>
+            <td>
+              <%= link_to '表示', "/tasks/#{task.id}", class:"btn btn-outline-primary btn-sm" %>
+              <% if task.user.id == current_user.id %>
+                <%= link_to "編集", edit_task_path(task), class:"btn btn-outline-primary btn-sm" %>
+                <%= link_to "削除", task_path(task), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
     <% end %>
   </table>
 </div>

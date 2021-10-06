@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  protect_from_forgery
     #セキュリティ、ログインさせる
     before_action :authenticate_user!
   def new
@@ -22,6 +23,9 @@ class TasksController < ApplicationController
     @tasks = Task.all
     @q = Task.ransack(params[:q])
     @tasks = @q.result(distinct: true)
+    if params[:button1]
+      redirect_to controller: :twotasks, action: :index
+    end
   end
   def show
     @task = Task.find(params[:id])

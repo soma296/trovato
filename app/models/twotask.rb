@@ -1,0 +1,2 @@
+class Twotask < ApplicationRecord
+end

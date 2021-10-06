@@ -1,22 +1,26 @@
-<% if @bringing.errors.present? %>
-  <h3>エラーがあります。</h3>
-  <div class="field_with_errors">
-    <ul>
-      <% @bringing.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_for @bringing, url: {action: :update} do |f| %>
-  <p><%= f.label :day, '　日付　' %>
-  <%= f.date_field :day %>  &emsp;
-  <%= f.label :week , "　毎週？" %>
-  <%= f.check_box :week %></p>
-  <p><%= f.label :title, '　教科名' %>
-  <%= f.text_field :title %></p>
-  <p><%= f.label :bringing, '　持ち物' %>
-  <%= f.text_field :bringing %></p>
-  &emsp;<%= f.submit '更新', class: "btn btn-success" %>
-<% end %>
+<div class="text-center">
+  <br><br><br><br>
+  <% if @bringing.errors.present? %>
+    <h3>エラーがあります。</h3>
+    <div class="field_with_errors">
+      <ul>
+        <% @bringing.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <%= form_for @bringing, url: {action: :update} do |f| %>
+  <p><%= f.label :day, '　　　　　　　 日付　' %>
+    <%= f.date_field :day %>  &emsp;
+    <%= f.label :week , "　毎週？" %>
+    <%= f.check_box :week %></p>
+    <p><%= f.label :title, '　教科名' %>
+    <%= f.text_field :title %></p>
+    <p><%= f.label :bringing, '　持ち物' %>
+    <%= f.text_field :bringing %></p>
+    <br>
+    &emsp;<%= f.submit '更新', class: "btn btn-success" %>
+  <% end %>
+</div>

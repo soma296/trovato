@@ -627,3 +627,31 @@ body {
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
 }
+
+.oneline{
+    opacity: 1;
+}
+.oneline.is-hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+}
+.list-btn {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+.list-btn.is-btn-hidden{
+  display:none;
+}
+.list-btn button {
+    background-color: #333;
+  color:#fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    height: 32px;
+    line-height: 32px;
+    width: 120px;
+}

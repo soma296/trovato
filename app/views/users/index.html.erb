@@ -3,9 +3,9 @@
     <h3>ユーザー一覧</h3><br>
     <% @users.each do |user| %>
         <% if user == current_user %>
-            <li>&emsp;<%= link_to user.username, user_path(user) %></li>
+            <li style="font-size: 24px;">&emsp;<%= link_to user.username, user_path(user) %></li>
         <% else %>
-            <li>&emsp;<%= user.username %></li>
+            <li style="font-size: 24px;">&emsp;<%= user.username %></li>
         <% end %>
     <% end %>
 </body>

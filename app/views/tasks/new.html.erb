@@ -1,45 +1,52 @@
-<% if @task.errors.present? %>
-  <h3>エラーがあります。</h3>
-  <div class="field_with_errors">
-    <ul>
-      <% @task.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-<br>
-<%= form_for @task, url: {action: :create} do |f| %>
-  <p><%= f.label :deadline, ' 　課題期限' %>
-  <%= f.datetime_field :deadline %></p>
-  <p><%= f.label :title, ' 　教科名　' %>
-  <%= f.text_field :title %></p>
-  <p><%= f.label :content, ' 　内容　　' %>
-  <%= f.text_field :content %></p>
-  <p><%= f.label :details, ' 　詳細　' %>
-　<%= f.text_field :details %></p>
-　<p class="fuga"><%= f.label :done, '完了？　' %>
-  <%= f.select :done, ['未完了'] %></p><br>
-  &emsp;<%= f.submit '登録', class: "btn btn-success" %>
+<div class="text-center">
+  <br><br><br><br>
+  <% if @task.errors.present? %>
+    <h3>エラーがあります。</h3>
+    <div class="field_with_errors">
+      <ul>
+        <% @task.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <br>
-  <br>
-  <br>
+  <%= form_for @task, url: {action: :create} do |f| %>
+    <p><%= f.label :deadline, ' 課題期限　' %>
+    <%= f.datetime_field :deadline, class: "period" %></p>
+    <p><%= f.label :title, ' 　教科名　' %>
+    <%= f.text_field :title %></p>
+    <p><%= f.label :content, ' 　内容　　' %>
+    <%= f.text_field :content %></p>
+    <p><%= f.label :details, ' 　詳細　' %>
+  　<%= f.text_field :details %></p>
+  　<p class="fuga"><%= f.label :done, '完了？　' %>
+    <%= f.select :done, ['未完了'] %></p><br>
+    <br>
+    &emsp;<%= f.submit '登録', class: "btn btn-success" %>
+    <br>
+    <br>
+    <br>
   <div class="sub-image"></div>
   <div class="talker">
+
   
-    <p>ここは削除予定</p>
-  </div>
+  <svg height="35" width="90">
+  <polygon id="btn-triangle" points="-130,50 0,-0 100,100" style="fill:#e0edff;cursor:pointer" />
+</svg>
   
   <script type="text/javascript">
+
 <!--
 function ranAry() {
-    var fruits =  ["タチツテトパワー", "僕が持ってるものなら", "他人は他人、自分は自分", "パンとワインで生きていける", "帰ろう"];
+    var fruits =  ["自分を信じるチャンスを与えろ", "みんなに笑われて強くなる", "夢はいつでも僕らの前にある", "パンとワインで進んでいける", "願えば叶う、何事も"];
     document.getElementById("dat").value = fruits[Math.floor(Math.random() * fruits.length)];
 }
 //-->
 </script>
 
-<div style="background-color : #CCC; padding : 20px 20px 1px;">
+<div style="background-color : #e0edff; padding : 20px 20px 1px;">
+
 ［今のあなたを元気付ける台詞］を表示します
     <form>
         <div style="display:inline-flex;">
@@ -48,4 +55,6 @@ function ranAry() {
         </div>
     </form>
 </div>
+
 <% end %>
+

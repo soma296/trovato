@@ -12,9 +12,9 @@
   <% end %>
   <br>
   <%= form_for @bringing, url: {action: :update} do |f| %>
-  <p><%= f.label :day, '　　　　　　　 日付　' %>
-    <%= f.date_field :day %>  &emsp;
-    <%= f.label :week , "　毎週？" %>
+  <p><%= f.label :day, '　日付　' %>
+    <%= f.date_field :day %></p>
+    <p><%= f.label :week , "毎週？" %>
     <%= f.check_box :week %></p>
     <p><%= f.label :title, '　教科名' %>
     <%= f.text_field :title %></p>

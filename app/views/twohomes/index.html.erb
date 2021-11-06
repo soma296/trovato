@@ -1,0 +1,299 @@
+<br>
+<% if user_signed_in? %>
+    <%= link_to "ユーザー一覧", users_path, class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "マイページ", user_path(current_user), class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %><br>
+    <body>
+        <br>
+        <form method="get" do>
+            <%= submit_tag '切替', value: '科目一覧表示(タグ有り)' , name: 'button4', :class => 'btn btn-primary' %>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered", id="table-bordered">
+                <tr class="strong">
+                    <th>／</th>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                </tr>
+
+                <tr>
+                    <th class="strong">1</td>
+                    <td>
+                        <% @subjects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title %></strong><br>
+                                <%= subject.teacher %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub1jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title1 %></strong><br>
+                                <%= subject.teather1 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub2jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title2 %></strong><br>
+                                <%= subject.teacher2 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub3jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title3 %></strong><br>
+                                <%= subject.teacher3 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub4jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title4 %></strong><br>
+                                <%= subject.teacher4 %><br>
+                            <% end %>
+                        <% end %></td>
+                </tr>
+                <tr>
+                    <th class="strong">2</td>
+                    <td>
+                        <% @sub5jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title5 %></strong><br>
+                                <%= subject.teacher5 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub6jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title6 %></strong><br>
+                                <%= subject.teacher6 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub7jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title7 %></strong><br>
+                                <%= subject.teacher7 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub8jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title8 %></strong><br>
+                                <%= subject.teacher8 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub9jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title9 %></strong><br>
+                                <%= subject.teacher9 %><br>
+                            <% end %>
+                        <% end %></td>
+                </tr>
+                <tr>
+                    <th class="strong">3</td>
+                    <td>
+                        <% @sub10jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title10 %></strong><br>
+                                <%= subject.teacher10 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub11jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title11 %></strong><br>
+                                <%= subject.teacher11 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub12jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title12 %></strong><br>
+                                <%= subject.teacher12 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub13jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title13 %></strong><br>
+                                <%= subject.teacher13 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub14jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title14 %></strong><br>
+                                <%= subject.teacher14 %><br>
+                            <% end %>
+                        <% end %></td>
+                </tr>  
+                <tr>
+                    <th class="strong">4</td>
+                    <td>
+                        <% @sub15jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title15 %></strong><br>
+                                <%= subject.teacher15 %><br>
+                            <% end %>
+                        <% end %></td>
+                        <td>
+                        <% @sub16jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title16 %></strong><br>
+                                <%= subject.teacher16 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub17jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title17 %></strong><br>
+                                <%= subject.teacher17 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                            <% @sub18jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title18 %></strong><br>
+                                <%= subject.teacher18 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                            <% @sub19jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title19 %></strong><br>
+                                <%= subject.teacher19 %><br>
+                            <% end %>
+                        <% end %></td>
+                </tr>
+                <tr>
+                    <th class="strong">5</td>
+                <td>
+                        <% @sub20jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title20 %></strong><br>
+                                <%= subject.teacher20 %><br>
+                            <% end %>
+                        <% end %></td>
+                <td>
+                        <% @sub21jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title21 %></strong><br>
+                                <%= subject.teacher21 %><br>
+                            <% end %>
+                        <% end %></td>
+                <td>
+                        <% @sub22jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title22 %></strong><br>
+                                <%= subject.teacher22 %><br>
+                            <% end %>
+                        <% end %></td>
+                <td>
+                        <% @sub23jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title23 %></strong><br>
+                                <%= subject.teacher23 %><br>
+                            <% end %>
+                        <% end %></td>
+                <td>
+                        <% @sub24jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title24 %></strong><br>
+                                <%= subject.teacher24 %><br>
+                            <% end %>
+                        <% end %></td>
+                </tr>
+                <tr>
+                    <th class="strong">6</td>
+                <td>
+                        <% @sub25jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title25 %></strong><br>
+                                <%= subject.teacher25 %><br>
+                            <% end %>
+                        <% end %></td>
+                <td>
+                        <% @sub26jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title26 %></strong><br>
+                                <%= subject.teacher26 %><br>
+                            <% end %>
+                        <% end %></td>
+                <td>
+                        <% @sub27jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title27 %></strong><br>
+                                <%= subject.teacher27 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub28jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title28 %></strong><br>
+                                <%= subject.teacher28 %><br>
+                            <% end %>
+                        <% end %></td>
+                    <td>
+                        <% @sub29jects.each do |subject| %>
+                            <% if subject.user.id == current_user.id %>
+                                <strong><%= subject.title29 %></strong><br>
+                                <%= subject.teacher29 %><br>
+                            <% end %>
+                        <% end %></td>
+                </tr>
+            </table>
+        </div>
+        <br><br><br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>今日の持ち物</td>
+                </tr>
+                <tr>
+                    <td>
+                        <% @bringings.each do |bringing| %>
+                            <% if Date.today == bringing.day %>
+                                <ul>
+                                    <li><%= bringing.bringing %></li>
+                                </ul>
+                            <% end %>
+                        <% end %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>今日の課題</td>
+                </tr>
+                <tr>
+                    <td>
+                        <% @tasks.each do |task| %>
+                            <% if Date.today == task.deadline %>
+                                <ul>
+                                    <li><%= task.title %></li>
+                                </ul>
+                            <% end %>
+                        <% end %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+<% else %>
+    <%= link_to "ユーザー一覧", users_path, class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-dark' %>&nbsp;&nbsp;
+    <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-dark' %>
+    <div class="bird"></div>
+    <div class="bird -type_2"></div>
+    <div class="bird -type_3"></div>
+<% end %>

@@ -1,0 +1,2 @@
+class Twohome < ApplicationRecord
+end

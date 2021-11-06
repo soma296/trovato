@@ -18,7 +18,9 @@
 
                 <tr>
                     <th class="strong">1</td>
-                    <td><%= link_to "登録", new_subject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @subjects.size == 0 %>
+                            <%= link_to "登録", new_subject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @subjects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title %></strong><br>
@@ -27,7 +29,9 @@
                                 <%= link_to "削除",  subject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub1ject_path(@sub1jects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub1jects.size == 0 %>
+                            <%= link_to "登録", new_sub1ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub1jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title1 %></strong><br>
@@ -36,16 +40,20 @@
                                 <%= link_to "削除",  sub1ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub2ject_path(@sub2jects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub2jects.size == 0 %>
+                            <%= link_to "登録", new_sub2ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub2jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
-                                <strong><%= subject.title2 %></strong><br>
-                                <%= subject.teacher2 %><br>
-                                <%= link_to "編集", edit_sub2ject_path(subject), class:"btn btn-outline-primary btn-sm" %>
-                                <%= link_to "削除",  sub2ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
+                            <strong><%= subject.title2 %></strong><br>
+                            <%= subject.teacher2 %><br>
+                            <%= link_to "編集", edit_sub2ject_path(subject), class:"btn btn-outline-primary btn-sm" %>
+                            <%= link_to "削除",  sub2ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub3ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub3jects.size == 0 %>
+                            <%= link_to "登録", new_sub3ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub3jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title3 %></strong><br>
@@ -54,7 +62,9 @@
                                 <%= link_to "削除",  sub3ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub4ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub4jects.size == 0 %>
+                            <%= link_to "登録", new_sub4ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub4jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title4 %></strong><br>
@@ -66,7 +76,9 @@
                 </tr>
                 <tr>
                     <th class="strong">2</td>
-                    <td><%= link_to "登録", new_sub5ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub5jects.size == 0 %>
+                            <%= link_to "登録", new_sub5ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub5jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title5 %></strong><br>
@@ -75,7 +87,9 @@
                                 <%= link_to "削除",  sub5ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub6ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub6jects.size == 0 %>
+                            <%= link_to "登録", new_sub6ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub6jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title6 %></strong><br>
@@ -84,7 +98,9 @@
                                 <%= link_to "削除",  sub6ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub7ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub7jects.size == 0 %>
+                            <%= link_to "登録", new_sub7ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub7jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title7 %></strong><br>
@@ -93,7 +109,9 @@
                                 <%= link_to "削除",  sub7ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub8ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub8jects.size == 0 %>
+                            <%= link_to "登録", new_sub8ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub8jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title8 %></strong><br>
@@ -102,7 +120,9 @@
                                 <%= link_to "削除",  sub8ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub9ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub9jects.size == 0 %>
+                            <%= link_to "登録", new_sub9ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub9jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title9 %></strong><br>
@@ -114,7 +134,9 @@
                 </tr>
                 <tr>
                     <th class="strong">3</td>
-                    <td><%= link_to "登録", new_sub10ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub10jects.size == 0 %>
+                            <%= link_to "登録", new_sub10ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub10jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title10 %></strong><br>
@@ -123,7 +145,9 @@
                                 <%= link_to "削除",  sub10ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub11ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub11jects.size == 0 %>
+                            <%= link_to "登録", new_sub11ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub11jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title11 %></strong><br>
@@ -132,7 +156,9 @@
                                 <%= link_to "削除",  sub11ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub12ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub12jects.size == 0 %>
+                            <%= link_to "登録", new_sub12ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub12jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title12 %></strong><br>
@@ -141,7 +167,9 @@
                                 <%= link_to "削除",  sub12ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub13ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub13jects.size == 0 %>
+                            <%= link_to "登録", new_sub13ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub13jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title13 %></strong><br>
@@ -150,7 +178,9 @@
                                 <%= link_to "削除",  sub13ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub14ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub14jects.size == 0 %>
+                            <%= link_to "登録", new_sub14ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub14jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title14 %></strong><br>
@@ -159,10 +189,12 @@
                                 <%= link_to "削除",  sub14ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                </tr>
+                </tr>  
                 <tr>
                     <th class="strong">4</td>
-                    <td><%= link_to "登録", new_sub15ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub15jects.size == 0 %>
+                        <%= link_to "登録", new_sub15ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                    <% end %>
                         <% @sub15jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title15 %></strong><br>
@@ -171,7 +203,9 @@
                                 <%= link_to "削除",  sub15ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub16ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                        <td><% if @sub16jects.size == 0 %>
+                            <%= link_to "登録", new_sub16ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub16jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title16 %></strong><br>
@@ -180,7 +214,9 @@
                                 <%= link_to "削除",  sub16ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub17ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub17jects.size == 0 %>
+                            <%= link_to "登録", new_sub17ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub17jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title17 %></strong><br>
@@ -189,8 +225,10 @@
                                 <%= link_to "削除",  sub17ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub18ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
-                        <% @sub18jects.each do |subject| %>
+                    <td><% if @sub18jects.size == 0 %>
+                            <%= link_to "登録", new_sub18ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
+                            <% @sub18jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title18 %></strong><br>
                                 <%= subject.teacher18 %><br>
@@ -198,8 +236,10 @@
                                 <%= link_to "削除",  sub18ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub19ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
-                        <% @sub19jects.each do |subject| %>
+                    <td><% if @sub19jects.size == 0 %>
+                            <%= link_to "登録", new_sub19ject_path, class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
+                            <% @sub19jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title19 %></strong><br>
                                 <%= subject.teacher19 %><br>
@@ -210,7 +250,9 @@
                 </tr>
                 <tr>
                     <th class="strong">5</td>
-                    <td><%= link_to "登録", new_sub20ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub20jects.size == 0 %>
+                        <%= link_to "登録", new_sub20ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                     <% end %>
                         <% @sub20jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title20 %></strong><br>
@@ -219,7 +261,9 @@
                                 <%= link_to "削除",  sub20ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub21ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub21jects.size == 0 %>
+                        <%= link_to "登録", new_sub21ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <% end %>
                         <% @sub21jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title21 %></strong><br>
@@ -228,7 +272,9 @@
                                 <%= link_to "削除",  sub21ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub22ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub22jects.size == 0 %>
+                        <%= link_to "登録", new_sub22ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <% end %>
                         <% @sub22jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title22 %></strong><br>
@@ -237,7 +283,9 @@
                                 <%= link_to "削除",  sub22ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub23ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub23jects.size == 0 %>
+                        <%= link_to "登録", new_sub23ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <% end %>
                         <% @sub23jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title23 %></strong><br>
@@ -246,7 +294,9 @@
                                 <%= link_to "削除",  sub23ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub24ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub24jects.size == 0 %>
+                        <%= link_to "登録", new_sub24ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                     <% end %>
                         <% @sub24jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title24 %></strong><br>
@@ -258,7 +308,9 @@
                 </tr>
                 <tr>
                     <th class="strong">6</td>
-                    <td><%= link_to "登録", new_sub25ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub25jects.size == 0 %>
+                        <%= link_to "登録", new_sub25ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                     <% end %>
                         <% @sub25jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title25 %></strong><br>
@@ -267,7 +319,9 @@
                                 <%= link_to "削除",  sub25ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub26ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub26jects.size == 0 %>
+                        <%= link_to "登録", new_sub26ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <% end %>
                         <% @sub26jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title26 %></strong><br>
@@ -276,7 +330,9 @@
                                 <%= link_to "削除",  sub26ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub27ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                <td><% if @sub27jects.size == 0 %>
+                        <%= link_to "登録", new_sub27ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <% end %>
                         <% @sub27jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title27 %></strong><br>
@@ -285,7 +341,9 @@
                                 <%= link_to "削除",  sub27ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub28ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub28jects.size == 0 %>
+                            <%= link_to "登録", new_sub28ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub28jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title28 %></strong><br>
@@ -294,7 +352,9 @@
                                 <%= link_to "削除",  sub28ject_path(subject), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
                             <% end %>
                         <% end %></td>
-                    <td><%= link_to "登録", new_sub29ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                    <td><% if @sub29jects.size == 0 %>
+                            <%= link_to "登録", new_sub29ject_path(@subjects), class:"btn btn-outline-primary btn-sm" %><br>
+                        <% end %>
                         <% @sub29jects.each do |subject| %>
                             <% if subject.user.id == current_user.id %>
                                 <strong><%= subject.title29 %></strong><br>
@@ -308,7 +368,7 @@
         </div>
         <br><br><br>
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered", id="table-bordered">
                 <tr>
                     <th>今日の持ち物</td>
                 </tr>
@@ -327,7 +387,7 @@
         </div>
         <br>
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered", id="table-bordered">
                 <tr>
                     <th>今日の課題</td>
                 </tr>

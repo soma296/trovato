@@ -1,3 +1,4 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <br>
 <h1 class="titlee center">持ち物一覧</h1>
 <br>
@@ -26,7 +27,7 @@
     <%= form_tag({ controller: :bringings, action: :destroy_all },method: 'delete') do %>
     <% @bringings.each do |bringing| %>
       <% if Date.today <= bringing.day %>
-        <tr>
+        <tr class="oneline">
           <td><p class="tdata"><%= bringing.user.username %></p></td>
           <td><p class="tdata"><%= bringing.bringing %></p></td>
           <td><p class="tdata"><%= bringing.title %></p></td>
@@ -48,7 +49,33 @@
     </div>
     </div>
     <% end %>
+
   </table>
+  <div class="list-btn">
+    <button>もっと見る</button>
+  </div>
 </div>
 
+<script>
+  /* ここには、表示するリストの数を指定します。 */
+  var moreNum = 5;
 
+  /* 表示するリストの数以降のリストを隠しておきます。 */
+  $('.oneline:nth-child(n + ' + (moreNum + 2) + ')').addClass('is-hidden');
+
+  /* 全てのリストを表示したら「もっとみる」ボタンをフェードアウトします。 */
+  $('.list-btn').on('click', function() {
+    $('.oneline.is-hidden').slice(0, moreNum).removeClass('is-hidden');
+    if ($('.oneline.is-hidden').length == 0) {
+      $('.list-btn').fadeOut();
+    } 
+  });
+
+  /* リストの数が、表示するリストの数以下だった場合、「もっとみる」ボタンを非表示にします。 */
+  $(function() {
+    var list = $(".oneline").length;  
+      if (list < moreNum) {
+        $('.list-btn').addClass('is-btn-hidden');
+    }
+  });
+</script>

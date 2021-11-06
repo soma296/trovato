@@ -35,5 +35,6 @@ Rails.application.routes.draw do
   resources :sub28jects
   resources :sub29jects
   resources :today
+  resources :twotasks
   delete :bringings, to: 'bringings#destroy_all'
 end

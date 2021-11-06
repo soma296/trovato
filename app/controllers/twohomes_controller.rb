@@ -1,6 +1,6 @@
-class HomeController < ApplicationController
-  def index
-    @tasks = Task.all
+class TwohomesController < ApplicationController
+    def index
+        @tasks = Task.all
     @bringings = Bringing.all
     @subjects = Subject.all
     @sub1jects = Sub1ject.all
@@ -32,8 +32,8 @@ class HomeController < ApplicationController
     @sub27jects = Sub27ject.all
     @sub28jects = Sub28ject.all
     @sub29jects = Sub29ject.all
-    if params[:button3]
-      redirect_to controller: :twohomes, action: :index
+    if params[:button4]
+        redirect_to controller: :home, action: :index
     end
   end
 end

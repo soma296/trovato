@@ -29,7 +29,29 @@
     <br>
     <div class="sub-image"></div>
     <div class="talker">
-      <p>コンビニでのカップ麺は何を買うべきだろうか</p>
+    <svg height="35" width="90">
+    <polygon id="btn-triangle" points="-130,50 0,-0 100,100" style="fill:#e0edff;cursor:pointer" />
+  </svg>
+    
+    <script type="text/javascript">
+  
+  <!--
+  function ranAry() {
+      var fruits =  ["走り出そう今がそのタイミングだ", "バチボコ元気!", "がむしゃらに往くしかない", "やらなきゃ負けだ", "ここで覚醒しろ"];
+      document.getElementById("dat").value = fruits[Math.floor(Math.random() * fruits.length)];
+  }
+  //-->
+  </script>
+  
+  <div style="background-color : #e0edff; padding : 20px 20px 1px;">
+  
+  ［今のあなたを元気付ける台詞］を表示します
+      <form>
+          <div style="display:inline-flex;">
+            　<input type="button" value="表示" onClick="ranAry()">　
+              <input type="text" id="dat" placeholder="ランダムに元気づけます">
+          </div>
+      </form>
     </div>
   <% end %>
 </div>

@@ -49,7 +49,7 @@
     </div>
     </div>
     <% end %>
-    
+
   </table>
   <div class="list-btn">
     <button>もっと見る</button>
@@ -61,7 +61,7 @@
   var moreNum = 5;
 
   /* 表示するリストの数以降のリストを隠しておきます。 */
-  $('.oneline:nth-child(n + ' + (moreNum + 1) + ')').addClass('is-hidden');
+  $('.oneline:nth-child(n + ' + (moreNum + 2) + ')').addClass('is-hidden');
 
   /* 全てのリストを表示したら「もっとみる」ボタンをフェードアウトします。 */
   $('.list-btn').on('click', function() {

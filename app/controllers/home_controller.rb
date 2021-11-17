@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @tasks = Task.all
-    @bringings = Bringing.all
+    @today_tasks = Task.where(deadline: Date.today)
+    @today_bringings = Bringing.where(day: Date.today)
     @subjects = Subject.all
     @sub1jects = Sub1ject.all
     @sub2jects = Sub2ject.all

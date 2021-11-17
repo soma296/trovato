@@ -660,3 +660,11 @@ body {
     line-height: 32px;
     width: 120px;
 }
+
+.table {
+    border: 1px solid black;
+}
+
+.table:empty:before {
+    content: "なし";
+}

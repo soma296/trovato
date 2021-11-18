@@ -22,6 +22,8 @@
   　<%= f.text_field :details %></p>
   　<p class="fuga"><%= f.label :done, '完了？　' %>
     <%= f.select :done, ['未完了'] %></p><br>
+    <div class="fuga"><%= f.label :department, '学科　' %>
+      <%= f.select :department, [['全学科（教養）','全学科（教養）'],['情報学科','情報学科'],['建築・デザイン学科','建築・デザイン学科'],['経営ビジネス学科','経営ビジネス学科'],['生物環境化学科','生物環境化学科'],['電気電子工学科','電気電子工学科']], { include_blank: false, selected: '全学科（教養）' } %></div><br><br>
     <br>
     &emsp;<%= f.submit '登録', class: "btn btn-success" %>
     <br>
@@ -37,12 +39,10 @@
   
   <script type="text/javascript">
 
-<!--
 function ranAry() {
     var fruits =  ["自分を信じるチャンスを与えろ", "みんなに笑われて強くなる", "夢はいつでも僕らの前にある", "パンとワインで進んでいける", "願えば叶う、何事も"];
     document.getElementById("dat").value = fruits[Math.floor(Math.random() * fruits.length)];
 }
-//-->
 </script>
 
 <div style="background-color : #e0edff; padding : 20px 20px 1px;">

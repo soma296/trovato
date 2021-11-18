@@ -11,6 +11,13 @@
       <i class='fa fa-search'></i>
     <% end %>
   <% end %>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :department, "学科検索" %>
+    <%= f.select :department_eq, [['全学科（教養）','全学科（教養）'],['情報学科','情報学科'],['建築・デザイン学科','建築・デザイン学科'],['経営ビジネス学科','経営ビジネス学科'],['生物環境化学科','生物環境化学科'],['電気電子工学科','電気電子工学科']] %>
+    <%= f.button :type => "submit", style: 'border-style: none;' do %>
+      <i class='fa fa-search'></i>
+    <% end %>
+  <% end %>
 </div>
 <br><br>
 <form method="get" do>

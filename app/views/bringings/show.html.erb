@@ -17,5 +17,9 @@
     <strong>持ち物：</strong>
     <%= @bringing.bringing %>
 </p>
+<p>
+    <strong>学科：</strong>
+    <%= @bringing.depart %><br>
+</p>
   <br>投稿者：<%= @bringing.user.username %><br><br>
   <%= link_to "戻る", bringings_path, class: 'btn btn-outline-primary' %>

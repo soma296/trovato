@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_06_082003) do
+ActiveRecord::Schema.define(version: 2021_11_18_093409) do
 
   create_table "bringings", force: :cascade do |t|
     t.date "day"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_082003) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.boolean "week"
+    t.string "depart"
   end
 
   create_table "sub10jects", force: :cascade do |t|
@@ -329,6 +330,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_082003) do
     t.integer "user_id"
     t.string "done"
     t.datetime "deadline"
+    t.string "department"
   end
 
   create_table "todays", force: :cascade do |t|

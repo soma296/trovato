@@ -29,7 +29,7 @@
       <th>教科名</th>
       <th>日付</th>
       <th>ボタン</th>
-      <th>選択削除</th>
+      <th>選択削除<div style="color: red">（他人のはできない）</div></th>
     </tr>
     <%= form_tag({ controller: :bringings, action: :destroy_all },method: 'delete') do %>
     <% @bringings.each do |bringing| %>
@@ -46,7 +46,9 @@
               <%= link_to "削除", bringing_path(bringing), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
             <% end %>
           </td>
-          <td><%= check_box_tag 'bringings[]',bringing.id %></td>
+          <% if bringing.user.id == current_user.id %>
+            <td><%= check_box_tag 'bringings[]',bringing.id %></td>
+          <% end %>
         </tr>
       <% end %>
     <% end %>

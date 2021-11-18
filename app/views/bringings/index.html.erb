@@ -6,7 +6,7 @@
   <%= sort_link(@q, :day, "日付順") %>
   <br>
   <%= search_form_for @q do |f| %>
-    <%= f.label :title, "キーワード検索" %>
+    <%= f.label :title, "教科名検索" %>
     <%= f.search_field :title_cont %>
     <%= f.button :type => "submit", style: 'border-style: none;' do %>
       <i class='fa fa-search'></i>

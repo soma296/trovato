@@ -13,7 +13,7 @@
   <br>
   <%= form_for @task, url: {action: :update} do |f| %>
     <p><%= f.label :deadline, ' 課題期限　' %>
-    <%= f.datetime_field :deadline %></p>
+    <%= f.datetime_field :deadline,  class: "period" %></p>
     <p><%= f.label :title, ' 　教科名　' %>
     <%= f.text_field :title %></p>
     <p><%= f.label :content, ' 　内容　　 ' %>

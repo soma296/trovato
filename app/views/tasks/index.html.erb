@@ -5,7 +5,7 @@
   <%= sort_link(@q, :deadline, "課題期限順") %>
   <br>
   <%= search_form_for @q do |f| %>
-    <%= f.label :title, "キーワード検索" %>
+    <%= f.label :title, "教科名検索" %>
     <%= f.search_field :title_cont %>
     <%= f.button :type => "submit", style: 'border-style: none;' do %>
       <i class='fa fa-search'></i>
@@ -35,7 +35,7 @@
               <td><p class="tdata"><%= task.title %></p></td>
               <td><p class="tdata"><%= task.content %></p></td>
               <td><p class="tdata"><%= task.details %></p></td>
-              <td><p class="tdata"><%= task.deadline.strftime("%Y-%m-%d %H:%M") %></p></td>
+              <td><p class="tdata"><%= task.deadline.strftime("%m/%d %H:%M") %></p></td>
               <td>
                 <%= link_to '表示', "/tasks/#{task.id}", class:"btn btn-outline-primary btn-sm" %>
                 <% if task.user.id == current_user.id %>

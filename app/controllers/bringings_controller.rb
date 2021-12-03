@@ -32,6 +32,9 @@ class BringingsController < ApplicationController
         @bringings = Bringing.all
         @q = Bringing.ransack(params[:q])
         @bringings = @q.result(distinct: true)
+        if params[:button4]
+            redirect_to controller: :twobringings, action: :index
+        end
     end
     def show
         @bringing = Bringing.find(params[:id])

@@ -1,4 +1,5 @@
-<br>
+<div class="text-center">
+<br><br><br><br>
 <%= form_for @sub10ject, url: {action: :update} do |f| %>
   <p><%= f.label :title10, '教科名' %>
   <%= f.text_field :title10 %></p>
@@ -6,3 +7,4 @@
   <%= f.text_field :teacher10 %></p>
   <%= f.submit '更新', class: "btn btn-success" %>
 <% end %>
+</div>

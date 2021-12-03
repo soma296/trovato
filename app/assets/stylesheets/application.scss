@@ -127,12 +127,12 @@ body:after {
 }
 
 .sub-image {
-    display: inline-block;
-    width: 60px;
-    height: 40px;
-    background-image: url(99suzume.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
+	display:inline-block;
+	width: 120px;
+	height: 80px;
+	background-image: url(99suzumet.png);
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .fuga {
@@ -223,21 +223,21 @@ body:after {
 
 .del{
 	display: inline-block;
-    border: 2px solid rgb(170, 0, 0);  /* 枠線 */
+    border: 2px solid rgb(170, 170, 0);  /* 枠線 */
 	box-shadow: 3px 3px 3px gray;  /* 影 */
     border-radius: 0.4em;   /* 角丸 */
-    padding: 12px 12px;             /* 横幅 */
-	font-size: 18pt;        /* 文字サイズ */
+    padding: 6px 6px;             /* 横幅 */
+	font-size: 18px;        /* 文字サイズ */
 	text-align: center;      /* 文字位置 */
 	cursor: pointer;     /* カーソル */
-	background: #ff0000;
-	color: #ffffff;
+	background: #ffff00;    /* 背景色 */
+	color: #000000;     /* 文字色 */
 }
 
 .del:hover{
 	box-shadow: none;        /* カーソル時の影消去 */
-	color: #ff0000;        /* 背景色 */
-	background: #ffffff;   /* 文字色 */
+	color: #000000;        /* 文字色 */
+	background: #ffffff;   /* 背景色 */
 }
 
 #content {
@@ -519,7 +519,8 @@ th.strong {
 }
 
 .hiduke {
-    color: #deb887;
+    color: #bdc3fc;
+    text-align: center;
 }
 
 .today {
@@ -630,14 +631,19 @@ body {
 
 .oneline{
     opacity: 1;
+    overflow: hidden;
+    transition: all .3s ease-in;
 }
 .oneline.is-hidden {
     opacity: 0;
     height: 0;
     margin: 0;
+    border: 0px none;
+    overflow: hidden; 
+    display: none;
 }
 .list-btn {
-    margin-bottom: 50px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
@@ -654,4 +660,12 @@ body {
     height: 32px;
     line-height: 32px;
     width: 120px;
+}
+
+.table {
+    border: 1px solid black;
+}
+
+.table:empty:before {
+    content: "なし";
 }

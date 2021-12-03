@@ -11,7 +11,8 @@ class TasksController < ApplicationController
     content = params[:task][:content]
     details = params[:task][:details]
     done = params[:task][:done]
-    @task = Task.new(deadline: deadline, title: title, content: content, details: details, done: done)
+    department = params[:task][:department]
+    @task = Task.new(deadline: deadline, title: title, content: content, details: details, done: done, department: department)
     @task.user_id = current_user.id
     if @task.save
       redirect_to task_path(@task), success: "課題を投稿しました。"
@@ -42,8 +43,9 @@ class TasksController < ApplicationController
     content = params[:task][:content]
     details = params[:task][:details]
     done = params[:task][:done]
+    department = params[:task][:department]
     @task = Task.find(params[:id])
-    if @task.update(deadline: deadline, title: title, content: content, details: details, done: done)
+    if @task.update(deadline: deadline, title: title, content: content, details: details, done: done, department: department)
       redirect_to task_path(@task), success: "課題を更新しました。"
     else
       render :edit

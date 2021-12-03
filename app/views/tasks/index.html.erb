@@ -5,8 +5,16 @@
   <%= sort_link(@q, :deadline, "課題期限順") %>
   <br>
   <%= search_form_for @q do |f| %>
-    <%= f.label :title, "キーワード検索" %>
+    <%= f.label :title, "教科名検索" %>
     <%= f.search_field :title_cont %>
+    <%= f.button :type => "submit", style: 'border-style: none;' do %>
+      <i class='fa fa-search'></i>
+    <% end %>
+  <% end %>
+  <br>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :department, "学科検索" %>
+    <%= f.select :department_eq, [['全学科（教養）','全学科（教養）'],['情報学科','情報学科'],['建築・デザイン学科','建築・デザイン学科'],['経営ビジネス学科','経営ビジネス学科'],['生物環境化学科','生物環境化学科'],['電気電子工学科','電気電子工学科']] %>
     <%= f.button :type => "submit", style: 'border-style: none;' do %>
       <i class='fa fa-search'></i>
     <% end %>
@@ -14,7 +22,7 @@
 </div>
 <br><br>
 <form method="get" do>
-<%= submit_tag '表示1', value: 'ボタン表示1' , name: 'button1', :class => 'btn btn-primary' %>
+<%= submit_tag '表示1', value: '全体表示' , name: 'button1', :class => 'btn btn-primary' %>
 </form>
 <h4 class="center" style="color: rgb(245, 72, 72);">未完了リスト</h4>
 <div class="table-responsive">
@@ -35,7 +43,7 @@
               <td><p class="tdata"><%= task.title %></p></td>
               <td><p class="tdata"><%= task.content %></p></td>
               <td><p class="tdata"><%= task.details %></p></td>
-              <td><p class="tdata"><%= task.deadline.strftime("%Y-%m-%d %H:%M") %></p></td>
+              <td><p class="tdata"><%= task.deadline.strftime("%m/%d %H:%M") %></p></td>
               <td>
                 <%= link_to '表示', "/tasks/#{task.id}", class:"btn btn-outline-primary btn-sm" %>
                 <% if task.user.id == current_user.id %>

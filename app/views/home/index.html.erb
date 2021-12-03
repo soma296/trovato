@@ -5,6 +5,9 @@
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %><br>
     <body>
         <br>
+        <form method="get" do>
+            <%= submit_tag '切替', value: '科目一覧表示(タグ無し)' , name: 'button3', :class => 'btn btn-primary' %>
+        </form>
         <div class="table-responsive">
             <table class="table table-bordered", id="table-bordered">
                 <tr class="strong">
@@ -374,8 +377,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <% @bringings.each do |bringing| %>
-                            <% if Date.today == bringing.day %>
+                        <% if @today_bringings.empty? %>
+                            <ul>
+                                <li>なし</li>
+                            </ul>
+                        <% else %>
+                            <% @today_bringings.each do |bringing| %>
                                 <ul>
                                     <li><%= bringing.bringing %></li>
                                 </ul>
@@ -393,11 +400,17 @@
                 </tr>
                 <tr>
                     <td>
-                        <% @tasks.each do |task| %>
-                            <% if Date.today == task.deadline %>
+                        <% if @today_tasks.empty? %>
                                 <ul>
-                                    <li><%= task.title %></li>
+                                    <li>なし</li>
                                 </ul>
+                        <% else %>
+                            <% @today_tasks.each do |task| %>
+                                <% if Date.today == task.deadline %>
+                                    <ul>
+                                        <li><%= task.title %></li>
+                                    </ul>
+                                <% end %>
                             <% end %>
                         <% end %>
                     </td>

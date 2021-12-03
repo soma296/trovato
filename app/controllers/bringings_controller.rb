@@ -9,13 +9,14 @@ class BringingsController < ApplicationController
         title = params[:bringing][:title]
         bringing = params[:bringing][:bringing]
         week = params[:bringing][:week]
-        @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week)
+        depart = params[:bringing][:depart]
+        @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week, depart: depart)
         @bringing.user_id = current_user.id
         @bringing.save
         if @bringing.week == true
             16.times do
                 day = day.to_date + 7
-                @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week)
+                @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week, depart: depart)
                 @bringing.user_id = current_user.id
                 @bringing.save
             end
@@ -46,8 +47,9 @@ class BringingsController < ApplicationController
         title = params[:bringing][:title]
         bringing = params[:bringing][:bringing]
         week = params[:bringing][:week]
+        depart = params[:bringing][:depart]
         @bringing = Bringing.find(params[:id])
-        if @bringing.update(day: day, title: title, bringing: bringing, week: week)
+        if @bringing.update(day: day, title: title, bringing: bringing, week: week, depart: depart)
             redirect_to bringing_path(@bringing), success: "持ち物を更新しました。"
         else
             render :edit
@@ -55,15 +57,20 @@ class BringingsController < ApplicationController
     end
     def destroy
         @bringing = Bringing.find(params[:id])
+        @bringing = Bringing.find_by(id: params[:id], user_id: current_user.id)
+        # return unless @bringing
+        if @bringing.nil?
+            redirect_to "/bringings", danger: "持ち物を削除できませんでした。"
+        end
         @bringing.destroy
         redirect_to "/bringings", danger: "持ち物を削除しました。"
     end
     def destroy_all
-        @bringings = Bringing.where(id: params[:bringings])
+        @bringings = Bringing.where(id: params[:bringings], user_id: current_user.id)
         @bringings.destroy_all
         respond_to do |format|
-        format.html { redirect_to bringings_url, notice: '持ち物を削除しました。' }
+        format.html { redirect_to bringings_url, danger: '持ち物を削除しました。' }
         format.json { head :no_content }
         end
-        end
+    end
 end

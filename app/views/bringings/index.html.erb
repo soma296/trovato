@@ -6,8 +6,16 @@
   <%= sort_link(@q, :day, "日付順") %>
   <br>
   <%= search_form_for @q do |f| %>
-    <%= f.label :title, "キーワード検索" %>
+    <%= f.label :title, "教科名検索" %>
     <%= f.search_field :title_cont %>
+    <%= f.button :type => "submit", style: 'border-style: none;' do %>
+      <i class='fa fa-search'></i>
+    <% end %>
+  <% end %>
+  <br>
+  <%= search_form_for @q do |f| %>
+    <%= f.label :depart, "学科検索" %>
+    <%= f.select :depart_eq, [['全学科（教養）','全学科（教養）'],['情報学科','情報学科'],['建築・デザイン学科','建築・デザイン学科'],['経営ビジネス学科','経営ビジネス学科'],['生物環境化学科','生物環境化学科'],['電気電子工学科','電気電子工学科']] %>
     <%= f.button :type => "submit", style: 'border-style: none;' do %>
       <i class='fa fa-search'></i>
     <% end %>
@@ -22,7 +30,7 @@
       <th>教科名</th>
       <th>日付</th>
       <th>ボタン</th>
-      <th>選択削除</th>
+      <th>選択削除<div style="color: red">（他人のはできない）</div></th>
     </tr>
     <%= form_tag({ controller: :bringings, action: :destroy_all },method: 'delete') do %>
     <% @bringings.each do |bringing| %>
@@ -39,17 +47,19 @@
               <%= link_to "削除", bringing_path(bringing), method: :delete, data: {confirm: "削除しますか？"}, class:"btn btn-outline-primary btn-sm" %>
             <% end %>
           </td>
-          <td><%= check_box_tag 'bringings[]',bringing.id %></td>
+          <% if bringing.user.id == current_user.id %>
+            <td><%= check_box_tag 'bringings[]',bringing.id %></td>
+          <% end %>
         </tr>
       <% end %>
     <% end %>
     <div class="actions">
     <div class="place", style="margin: 30px;"> 
-      <%= submit_tag "一括削除", class: "del" %>
+      <%= submit_tag "選択削除", class: "del" %>
     </div>
     </div>
     <% end %>
-    
+
   </table>
   <div class="list-btn">
     <button>もっと見る</button>
@@ -61,7 +71,7 @@
   var moreNum = 5;
 
   /* 表示するリストの数以降のリストを隠しておきます。 */
-  $('.oneline:nth-child(n + ' + (moreNum + 1) + ')').addClass('is-hidden');
+  $('.oneline:nth-child(n + ' + (moreNum + 2) + ')').addClass('is-hidden');
 
   /* 全てのリストを表示したら「もっとみる」ボタンをフェードアウトします。 */
   $('.list-btn').on('click', function() {

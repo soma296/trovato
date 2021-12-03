@@ -23,7 +23,7 @@
 </div>
 <br><br>
 <form method="get" do>
-<%= submit_tag '自分のみ', value: '自分のみ' , name: 'button4', :class => 'btn btn-primary' %>
+<%= submit_tag '全員', value: '全員' , name: 'button5', :class => 'btn btn-primary' %>
 </form>
 <div class="table-responsive">
   <table class="table table-bordered">
@@ -37,6 +37,7 @@
     </tr>
     <%= form_tag({ controller: :bringings, action: :destroy_all },method: 'delete') do %>
     <% @bringings.each do |bringing| %>
+    <% if bringing.user.id == current_user.id %>
       <% if Date.today <= bringing.day %>
         <tr class="oneline">
           <td><p class="tdata"><%= bringing.user.username %></p></td>
@@ -56,6 +57,7 @@
         </tr>
       <% end %>
     <% end %>
+  <% end %>
     <div class="actions">
     <div class="place", style="margin: 30px;"> 
       <%= submit_tag "選択削除", class: "del" %>

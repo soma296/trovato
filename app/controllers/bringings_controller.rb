@@ -9,13 +9,14 @@ class BringingsController < ApplicationController
         title = params[:bringing][:title]
         bringing = params[:bringing][:bringing]
         week = params[:bringing][:week]
-        @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week)
+        depart = params[:bringing][:depart]
+        @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week, depart: depart)
         @bringing.user_id = current_user.id
         @bringing.save
         if @bringing.week == true
             16.times do
                 day = day.to_date + 7
-                @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week)
+                @bringing = Bringing.new(day: day, title: title, bringing: bringing, week: week, depart: depart)
                 @bringing.user_id = current_user.id
                 @bringing.save
             end
@@ -31,6 +32,9 @@ class BringingsController < ApplicationController
         @bringings = Bringing.all
         @q = Bringing.ransack(params[:q])
         @bringings = @q.result(distinct: true)
+        if params[:button4]
+            redirect_to controller: :twobringings, action: :index
+        end
     end
     def show
         @bringing = Bringing.find(params[:id])
@@ -46,8 +50,9 @@ class BringingsController < ApplicationController
         title = params[:bringing][:title]
         bringing = params[:bringing][:bringing]
         week = params[:bringing][:week]
+        depart = params[:bringing][:depart]
         @bringing = Bringing.find(params[:id])
-        if @bringing.update(day: day, title: title, bringing: bringing, week: week)
+        if @bringing.update(day: day, title: title, bringing: bringing, week: week, depart: depart)
             redirect_to bringing_path(@bringing), success: "持ち物を更新しました。"
         else
             render :edit

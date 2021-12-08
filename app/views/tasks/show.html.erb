@@ -18,5 +18,9 @@
     <strong>完了？：</strong>
     <%= @task.done %><br>
 </p>
+<p>
+    <strong>学科：</strong>
+    <%= @task.department %><br>
+</p>
   <br>投稿者：<%= @task.user.username %><br><br>
 <%= link_to "戻る", tasks_path, class: 'btn btn-outline-primary' %>

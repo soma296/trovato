@@ -13,7 +13,7 @@
   <br>
   <%= form_for @task, url: {action: :update} do |f| %>
     <p><%= f.label :deadline, ' 課題期限　' %>
-    <%= f.datetime_field :deadline %></p>
+    <%= f.datetime_field :deadline,  class: "period" %></p>
     <p><%= f.label :title, ' 　教科名　' %>
     <%= f.text_field :title %></p>
     <p><%= f.label :content, ' 　内容　　 ' %>
@@ -22,6 +22,8 @@
   　<%= f.text_field :details %></p>
   　<div class="fuga"><%= f.label :done, '完了？　' %>
     <%= f.select :done, [['未完了','未完了'],['完了','完了']], { include_blank: false, selected: '未完了' } %></div><br><br>
+    <div class="fuga"><%= f.label :department, '学科　' %>
+      <%= f.select :department, [['全学科（教養）','全学科（教養）'],['情報学科','情報学科'],['建築・デザイン学科','建築・デザイン学科'],['経営ビジネス学科','経営ビジネス学科'],['生物環境化学科','生物環境化学科'],['電気電子工学科','電気電子工学科']], { include_blank: false, selected: '全学科（教養）' } %></div><br><br>
     <br>
     &emsp;<%= f.submit '更新', class: "btn btn-success" %>
     <br>
@@ -35,12 +37,10 @@
     
     <script type="text/javascript">
   
-  <!--
   function ranAry() {
-      var fruits =  ["走り出そう今がそのタイミングだ", "バチボコ元気!", "がむしゃらに往くしかない", "やらなきゃ負けだ", "ここで覚醒しろ"];
+      var fruits =  ["走り出そう今がタイミングだ", "バチボコ元気!", "がむしゃらに往くしかない", "やらなきゃ負けだ", "ここで覚醒しろ"];
       document.getElementById("dat").value = fruits[Math.floor(Math.random() * fruits.length)];
   }
-  //-->
   </script>
   
   <div style="background-color : #e0edff; padding : 20px 20px 1px;">

@@ -33,7 +33,7 @@ class HomeController < ApplicationController
     @sub28jects = Sub28ject.all
     @sub29jects = Sub29ject.all
     if params[:button3]
-      redirect_to controller: :twohomes, action: :success
+      redirect_to controller: :twohomes, action: :index
     end
   end
 end
